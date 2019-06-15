@@ -40,6 +40,7 @@ _has_many:message
 |group|string|null:false,foreign_key:true|
 |date|datetime|null:false
 |picture|text|
+## Association
 _belongs_to:user
 _belongs_to:group
 

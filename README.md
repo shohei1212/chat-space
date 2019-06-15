@@ -22,6 +22,7 @@ _belongs_to :group
 _has_many :message
 
 ##groupテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integre|null:false,foreign_key:true|
@@ -32,6 +33,7 @@ _has_many:members
 _has_many:message
 
 ##messageテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |member|string|null:false,foreign_key:true|

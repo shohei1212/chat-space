@@ -3,35 +3,35 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
 
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |Email|string|null:false,unique: true|
 |password|string|null:false|
-|name|string|null:false|
+|name|string|null:false,index: true|
 ### Association
 - has_many :members
 - has_many :groups,through::members
 - has_many :messages
 
-##groupテーブル
+##groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integre|null:false,foreign_key:true|
+|name|string|null:false,index: true|
 ### Association
-- has_many :users
+- has_many :users,through：：members
 - has_many :members
-- has_many :message
+- has_many :messages
 
-##messageテーブル
+##messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|

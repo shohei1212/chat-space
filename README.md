@@ -17,9 +17,9 @@
 |Email|string|null:false,unique: true|
 |password|string|null:false|
 ### Association
-_ has_many :members
-_ belongs_to :group
-_ has_many :message
+- has_many :members
+- belongs_to :group
+- has_many :message
 
 ##groupテーブル
 
@@ -28,9 +28,9 @@ _ has_many :message
 |user_id|integre|null:false,foreign_key:true|
 |group_id|integre|null:false,foreign_key:true|
 ### Association
-_ has_many :users
-_ has_many :members
-_ has_many :message
+- has_many :users
+- has_many :members
+- has_many :message
 
 ##messageテーブル
 
@@ -41,8 +41,8 @@ _ has_many :message
 |date|datetime|null:false
 |picture|text|
 ## Association
-_ belongs_to :user
-_ belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 
 This README would normally document whatever steps are necessary to get the

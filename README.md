@@ -15,7 +15,7 @@
 |------|----|-------|
 |Email|string|null:false,unique: true|
 |password|string|null:false|
-|name||string||null:false|
+|name|string|null:false|
 ### Association
 - has_many :members
 - has_many :groups,through::members
@@ -36,7 +36,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |picture|string|
-|body||text|
+|body|text|
 ## Association
 - belongs_to :user
 - belongs_to :group

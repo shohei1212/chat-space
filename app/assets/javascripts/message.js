@@ -87,7 +87,7 @@ $(function() {
   
   function scroll() {
       $('.messages').animate({scrollTop: $('.message')[0].scrollHeight});
-  }
+      }
       $("#new_message").on('submit', function(e) {
   
       e.preventDefault();

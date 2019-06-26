@@ -1,7 +1,5 @@
 .wrapper
-
   = render 'side_bar'
-
   .chat
     .header
       .left-header
@@ -11,7 +9,6 @@
           Member：
           %li.member
             メンバー名
-
       .right-header
         .right-header__button
           Edit
@@ -26,8 +23,6 @@
         .lower-meesage
           .lower-message__content
             こんにちは
- 
-    
     .form
       = form_for [@group, @message], id: "new_message" do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
@@ -36,7 +31,3 @@
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
-
-  
-       
-       

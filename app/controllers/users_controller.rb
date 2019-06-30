@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
@@ -25,4 +26,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 end
+
 

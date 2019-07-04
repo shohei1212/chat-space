@@ -2,6 +2,8 @@ $(function () {
 
   function buildHTML(message) {
 
+    
+  
     image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : ""; //三項演算子を使ってmessage.imageにtrueならHTML要素、faiseなら空の値を代入。
 
     var html = `<div class="message" data-message-id="${message.id}"> 
@@ -88,6 +90,7 @@ $(function() {
         e.preventDefault();
         var formData = new FormData(this);
         var url = $(this).attr('action');
+        
 
         $.ajax({
         url: url,
@@ -103,6 +106,7 @@ $(function() {
         $('.messages').append(html);
         $('.form__submit').prop('disabled', false);
         scroll()
+        $("#new_message")[0].reset();
       })  
       .fail(function(){
           alert('error')

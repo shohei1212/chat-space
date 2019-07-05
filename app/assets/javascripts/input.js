@@ -2,7 +2,7 @@ $(function() {
 
   var search_list = $("#user-search-result");
   var member_list = $("#member_search_result");
-  var users = []
+  var users_list = []
 
   function appendUsers(user) {
     var html =`<div class="chat-group-user clearfix">
@@ -10,8 +10,14 @@ $(function() {
                 <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name=${ user.name }>追加</a>
               </div>`
 
+    users_list.forEach(function(member_id){
+      if (member_id === user.id){
+        html = ""
+      }
+    })
+
 　　 search_list.append(html);
-    return html;
+    // return html;
    }
 
   function appendMembers(name, user_id) {
@@ -47,7 +53,7 @@ $(function() {
         $("#user-search-result").empty();
           if (users.length !== 0) {
             users.forEach(function(user){
-            appendUsers(user);
+              appendUsers(user);
             });
           }
           else {
@@ -63,7 +69,8 @@ $(function() {
       $(document).on('click', '.user-search-add', function() {
         var name = $(this).data("user-name");
         var user_id = $(this).data("user-id");
-        users.push(user_id)
+        users_list.push(user_id)
+        // console.log(users)
         $(this).parent().remove();
         appendMembers(name, user_id);
         $.ajax({
@@ -73,7 +80,7 @@ $(function() {
           dataType: 'json'
         })
         .done(function(users){
-          console.log(users)
+          // console.log(users)
         })
       });
 

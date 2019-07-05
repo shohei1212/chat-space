@@ -1,4 +1,5 @@
 $(function () {
+  
 
   function buildHTML(message) {
 
@@ -53,7 +54,8 @@ $(function () {
       });
     }
   };
-  setInterval(reloadMessages, 5000);//5000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
+  // setInterval(reloadMessages, 5000);
+  //5000ミリ秒ごとにreloadMessagesという関数を実行し自動更新を行う。
   });
 
 

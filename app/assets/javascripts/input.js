@@ -2,6 +2,7 @@ $(function() {
 
   var search_list = $("#user-search-result");
   var member_list = $("#member_search_result");
+  var users = []
 
   function appendUsers(user) {
     var html =`<div class="chat-group-user clearfix">
@@ -62,8 +63,18 @@ $(function() {
       $(document).on('click', '.user-search-add', function() {
         var name = $(this).data("user-name");
         var user_id = $(this).data("user-id");
+        users.push(user_id)
         $(this).parent().remove();
         appendMembers(name, user_id);
+        $.ajax({
+          type: 'GET',
+          url: '/users',
+          data: {user_id: users}, 
+          dataType: 'json'
+        })
+        .done(function(users){
+          console.log(users)
+        })
       });
 
 　    $(document).on("click", '.user-search-remove', function() {
@@ -72,5 +83,3 @@ $(function() {
     });
   });
 });
-
-

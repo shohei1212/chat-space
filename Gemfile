@@ -90,3 +90,4 @@ end
 gem 'carrierwave'
 gem 'fog-aws'
 
+gem "nokogiri", ">= 1.10.4"
